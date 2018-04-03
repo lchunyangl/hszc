@@ -16,7 +16,14 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+Vue.component('hello', require('./components/Hello.vue'));
+Vue.component('app', require('./components/App.vue'));
+Vue.component('container', require('./components/Container.vue'));
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+import router from './router/index.js';
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
 });
