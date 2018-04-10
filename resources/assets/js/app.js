@@ -14,12 +14,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('container', require('./components/Container.vue'));
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-import router from './router/index.js';
+Vue.component('container', require('./components/iview/Layout.vue'));
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+import router from './router/router.js';
+import axios from 'axios';
 
-Vue.use(ElementUI);
+Vue.use(iView);
+Vue.prototype.$ajax = axios;
 const app = new Vue({
     el: '#app',
     router,
